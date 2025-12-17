@@ -24,26 +24,16 @@ body {
   padding: 5vw 10vw;
 }
 
-header,
+
 footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-header,
 footer,
 section {
   margin: 10vh 0;
-}
-
-header {
-  margin: 5vh 0;
-}
-
-nav {
-  display: flex;
-  gap: 20px;
 }
 
 .sections {
