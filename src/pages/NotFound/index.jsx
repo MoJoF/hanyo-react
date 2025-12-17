@@ -7,7 +7,7 @@ const NotFound = () => {
         <div className={styles.not_found_cont}>
             <h1>404</h1>
             <h2>Такая страница не найдена</h2>
-            <Link to="/">Вернуться на главную</Link>
+            <Link className={styles.not_found_link} to="/">Вернуться на главную</Link>
         </div>
     )
 }
