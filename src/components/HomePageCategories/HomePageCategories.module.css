@@ -1,0 +1,9 @@
+section {
+  margin: 10vh 0;
+}
+
+.sections {
+  display: flex;
+  justify-content: space-between;
+}
+
