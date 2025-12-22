@@ -1,7 +1,8 @@
 import { Link } from "react-router"
 import styles from "./Footer.module.css"
+import { memo } from "react"
 
-const Footer = () => {
+const Footer = memo(() => {
     return (
         <footer>
             <span>&copy;hanyo</span>
@@ -11,6 +12,6 @@ const Footer = () => {
             </nav>
         </footer>
     )
-}
+})
 
 export default Footer
