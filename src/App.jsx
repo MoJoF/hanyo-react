@@ -5,6 +5,8 @@ import NotFound from "./pages/NotFound"
 import Policy from "./pages/Policy"
 import Terms from "./pages/Terms"
 import Category from "./pages/Category"
+import Admin from "./pages/Admin"
+import Dashboard from "./pages/Dashboard"
 
 
 function App() {
@@ -13,6 +15,11 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <Routes>
+        {/* Админ часть */}
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+
+        {/* Клиентская часть */}
         <Route path="/" element={<Home />} />
         <Route path="/policy" element={<Policy />} />
         <Route path="/terms" element={<Terms />} />
