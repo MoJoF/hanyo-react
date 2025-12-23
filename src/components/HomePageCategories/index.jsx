@@ -27,7 +27,7 @@ const HomePageCategories = () => {
     const parents = grouped["none"] ?? []
 
     return (
-        <section>
+        <section className={styles.home_page}>
             <h2>Список разделов</h2>
 
             <div className={styles.sections}>

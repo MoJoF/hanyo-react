@@ -7,6 +7,7 @@ import Terms from "./pages/Terms"
 import Category from "./pages/Category"
 import Admin from "./pages/Admin"
 import Dashboard from "./pages/Dashboard"
+import AdminPosts from "./pages/AdminPosts"
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         {/* Админ часть */}
         <Route path="/admin" element={<Admin />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard/posts" element={<AdminPosts />} />
 
         {/* Клиентская часть */}
         <Route path="/" element={<Home />} />

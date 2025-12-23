@@ -1,6 +1,16 @@
+import styles from "./Dashboard.module.css"
+import AdminHeader from "../../components/AdminHeader"
+import Footer from "../../components/Footer"
+
 const Dashboard = () => {
     return (
-        <h1>Dashboard</h1>
+        <>
+            <AdminHeader />
+            <div className={styles.container}>
+                Здесь пока что пусто
+            </div>
+            <Footer />
+        </>
     )
 }
 
