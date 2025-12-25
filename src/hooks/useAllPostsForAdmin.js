@@ -6,7 +6,7 @@ async function get_all_posts_for_admin() {
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify({ action: "get_category_posts_with_drafts" })
+        body: JSON.stringify({ action: "get_posts_with_drafts" })
     })
 
     if (!res.ok) throw new Error("Ошибка загрузки категории")
