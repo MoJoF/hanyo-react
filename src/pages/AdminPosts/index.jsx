@@ -8,7 +8,13 @@ import { useAllPostsForAdmin } from "../../hooks/useAllPostsForAdmin"
 const AdminPosts = () => {
     const { data, isLoading, isError, error } = useAllPostsForAdmin()
 
-    if (isLoading) return <h2>Загрузка постов</h2>
+    if (isLoading) return (
+        <>
+            <AdminHeader />
+            <h2>Загрузка постов</h2>
+            <Footer />
+        </>
+    )
 
     if (isError) return <p>{error.message}</p>
 
