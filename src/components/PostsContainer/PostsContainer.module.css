@@ -1,0 +1,25 @@
+.admin_posts {
+    margin-top: 40px;
+}
+
+.admin_post {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    border: 2px solid #fff;
+    width: fit-content;
+    border-radius: 0 0 20px 0;
+}
+
+.admin_bottom_post {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.admin_category_post {
+    font-size: 16px;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}

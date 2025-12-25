@@ -5,6 +5,11 @@
   font-family: "JetBrains Mono";
 }
 
+::selection {
+  background: #fff;
+  color: #1b1b1b;
+}
+
 a {
   background: transparent;
   border: none;

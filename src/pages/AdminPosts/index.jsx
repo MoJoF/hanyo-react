@@ -1,8 +1,9 @@
 import AdminHeader from "../../components/AdminHeader"
 import Footer from "../../components/Footer"
+import PostsContainer from "../../components/PostsContainer"
 import { Link } from "react-router"
 import { useAllPostsForAdmin } from "../../hooks/useAllPostsForAdmin"
-import styles from "./AdminPosts.module.css"
+
 
 const AdminPosts = () => {
     const { data, isLoading, isError, error } = useAllPostsForAdmin()
@@ -18,16 +19,7 @@ const AdminPosts = () => {
                 <Link to="create-post">Создать пост</Link>
                 <Link to="drafts">Черновики</Link>
             </nav>
-            <div className={styles.posts}>
-
-                {data.posts.map(post => (
-                    <div className={styles.post}>
-                        <Link to={"edit_post?id=" + post.post_id}>{post.post_title}</Link>
-                        {post.post_draft ? <small>Черновик</small> : ""}
-                    </div>
-                ))}
-
-            </div>
+            <PostsContainer posts={data.posts} />
             <Footer />
         </>
     )
