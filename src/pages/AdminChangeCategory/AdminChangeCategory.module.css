@@ -1,0 +1,11 @@
+.admin_category_block {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.admin_category_block > input,
+.admin_category_block > textarea {
+    color: #000;
+    
+}
