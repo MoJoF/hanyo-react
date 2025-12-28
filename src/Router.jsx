@@ -7,6 +7,7 @@ import Category from "./pages/Category"
 import Admin from "./pages/Admin"
 import Dashboard from "./pages/Dashboard"
 import AdminPosts from "./pages/AdminPosts"
+import Post from "./pages/Post"
 
 const Router = () => {
     return (
@@ -21,6 +22,7 @@ const Router = () => {
             <Route path="/policy" element={<Policy />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/category/:link" element={<Category />} />
+            <Route path="/post/:post_id" element={<Post />} />
 
             {/* 404 */}
             <Route path="*" element={<NotFound />} />

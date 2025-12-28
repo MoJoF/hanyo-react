@@ -7,7 +7,7 @@ const RenderChildCategory = ({ title, description, id }) => {
             <p>{description}</p>
 
             <div className={styles.posts}>
-                Пока что нет тут постов. Наберитесь терпения.
+                Пока что тут нет постов. Наберитесь терпения.
             </div>
         </div>
     )
