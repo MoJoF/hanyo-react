@@ -25,7 +25,7 @@ const ChangeParentCategory = ({ category_id, categoryParentId, setCategoryParent
 
     return (
         <select
-            value={categoryParentId}
+            value={categoryParentId || "none"}
             onChange={handleChange}
         >
             <option value="none">none</option>
