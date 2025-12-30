@@ -26,7 +26,7 @@ const HomePagePosts = () => {
             <h2>Недавнее</h2>
             <div className={styles.posts}>
                 {data.posts.map(post => (
-                    <div className={styles.post}>
+                    <div className={styles.post} key={post.post_id}>
                         <Link to={"/post/" + post.post_id} className={styles.post__header}>
                             {post.post_title}
                         </Link>

@@ -3,6 +3,7 @@ import Footer from "../../components/Footer";
 import { useParams } from "react-router-dom";
 import { useGetCategoryByLink } from "../../hooks/useGetCategoryByLink";
 import RenderChildCategory from "../../components/RenderChildCategory";
+import RenderParentCategory from "../../components/RenderParentCategory";
 
 const Category = () => {
     const { link } = useParams()
@@ -16,12 +17,8 @@ const Category = () => {
         <>
             <Header />
             {data.type === "child" ?
-                (<RenderChildCategory
-                    title={data.category.category_title}
-                    description={data.category.category_description}
-                    id={data.category.category_id}
-                />) :
-                (<h1>Загружена родительская категория</h1>)}
+                (<RenderChildCategory link={link} />) :
+                (<RenderParentCategory link={link} />)}
             <Footer />
         </>
     )
