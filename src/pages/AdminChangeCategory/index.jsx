@@ -73,7 +73,7 @@ const AdminChangeCategory = () => {
                 </div>
                 <div className={styles.edit_category_block}>
                     <label>Родительская категория:</label>
-                    <ChangeParentCategory category_id={category_id} setCategoryParentId={setCategoryParentId} />
+                    <ChangeParentCategory category_id={category_id} categoryParentId={categoryParentId} setCategoryParentId={setCategoryParentId} />
                 </div>
 
                 <button className={styles.save_category} onClick={handleUpdate}>Сохранить</button>

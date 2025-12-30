@@ -1,7 +1,7 @@
 import { useAllCategories } from "../../hooks/useAllCategories"
 import styles from "./ChangeParentCategory.module.css"
 
-const ChangeParentCategory = ({ category_id, setCategoryParentId }) => {
+const ChangeParentCategory = ({ category_id, categoryParentId, setCategoryParentId }) => {
     const { data, isLoading, isError, error } = useAllCategories()
 
     if (isLoading) return <p>Загрузка...</p>
@@ -25,7 +25,7 @@ const ChangeParentCategory = ({ category_id, setCategoryParentId }) => {
 
     return (
         <select
-            value={String(currentCategory.category_parent_id)}
+            value={categoryParentId}
             onChange={handleChange}
         >
             <option value="none">none</option>
