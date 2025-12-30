@@ -1,10 +1,10 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 
-const updateCategory = async (category) => {
+const deleteCategory = async (category_id) => {
     const res = await fetch("https://hanyo-writes.omyraucy.workers.dev/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ action: "edit_category", ...category })
+        body: JSON.stringify({ action: "delete_category", ...category_id })
     });
 
     if (!res.ok) {
@@ -14,14 +14,14 @@ const updateCategory = async (category) => {
     return res.json();
 }
 
-export function useUpdateCategory() {
+export function useDeleteCategory() {
     const queryClient = useQueryClient()
 
     return useMutation({
-        mutationFn: updateCategory,
+        mutationFn: deleteCategory,
         onSuccess: () => {
             queryClient.invalidateQueries({ queryKey: ["categories"] })
-            alert("Данные успешно обновлены")
+            location.reload()
         },
         onError: (error) => {
             alert(`Ошибка: ${error.message}`)

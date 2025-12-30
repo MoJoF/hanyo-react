@@ -1,0 +1,11 @@
+.category_menu {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+small.delete_category {
+    color: red;
+    font-size: 16px;
+    cursor: pointer;
+}

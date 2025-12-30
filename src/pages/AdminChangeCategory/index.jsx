@@ -26,23 +26,9 @@ const AdminChangeCategory = () => {
         }
     }, [data])
 
-    if (isLoading) {
-        return (
-            <>
-                <p>Загрука данных о категории...</p>
-            </>
-        )
-    }
+    if (isLoading) return (<p>Загрука данных о категории...</p>)
 
-    if (isError) {
-        return (
-            <>
-                <p>{error.message}</p>
-            </>
-        )
-    }
-
-    
+    if (isError) return (<p>{error.message}</p>)
 
     const handleUpdate = () => {
         const category_data = { 
