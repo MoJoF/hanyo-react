@@ -1,25 +1,42 @@
 import { useAllCategories } from "../../hooks/useAllCategories"
-
+import styles from "./ChangeParentCategory.module.css"
 
 const ChangeParentCategory = ({ category_id, setCategoryParentId }) => {
     const { data, isLoading, isError, error } = useAllCategories()
 
-    if (isLoading) return (<p>Загрузка...</p>)
+    if (isLoading) return <p>Загрузка...</p>
+    if (isError) return <p>{error.message}</p>
 
-    if (isError) return (<p>{error.message}</p>)
+    const allCategories = data.allRecords
 
-    const categories = data.allRecords.filter(cat => cat.category_id != category_id)
+    const currentCategory = allCategories.find(
+        c => c.category_id == category_id
+    )
 
-    const changePId = (e) => {
-        const option = e.target.selectedOptions[0]
-        const id = option.dataset.id
-        setCategoryParentId(id)
+    if (!currentCategory) return null
+
+    const categories = allCategories.filter(
+        c => c.category_id !== category_id
+    )
+
+    const handleChange = (e) => {
+        setCategoryParentId(e.target.value)
     }
 
     return (
-        <select onChange={e => changePId(e)}>
-            {categories.map(categoryObj => (
-                <option key={categoryObj.category_id} data-id={categoryObj.category_id} value={categoryObj.category_title}>{categoryObj.category_title}</option>
+        <select
+            value={String(currentCategory.category_parent_id)}
+            onChange={handleChange}
+        >
+            <option value="none">none</option>
+
+            {categories.map(category => (
+                <option
+                    key={category.category_id}
+                    value={category.category_id}
+                >
+                    {category.category_title}
+                </option>
             ))}
         </select>
     )

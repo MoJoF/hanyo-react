@@ -1,7 +1,8 @@
 import styles from "./AdminChangeCategory.module.css"
 import { useParams } from "react-router"
-import { useGetCategory } from "../../hooks/useGetCategory"
 import { useState, useEffect } from "react"
+import { useGetCategory } from "../../hooks/useGetCategory"
+import { useUpdateCategory } from "../../hooks/useUpdateCategory"
 import ChangeParentCategory from "../../components/ChangeParentCategory"
 
 const AdminChangeCategory = () => {
@@ -13,6 +14,7 @@ const AdminChangeCategory = () => {
     const [categoryParentId, setCategoryParentId] = useState("")
 
     const { data, isLoading, isError, error } = useGetCategory(category_id)
+    const { mutate, isPending } = useUpdateCategory();
 
     useEffect(() => {
         if (data?.category) {
@@ -40,6 +42,20 @@ const AdminChangeCategory = () => {
         )
     }
 
+    
+
+    const handleUpdate = () => {
+        const category_data = { 
+            category_id, 
+            category_title: categoryTitle,
+            category_description: categoryDescription,
+            category_link: categoryLink,
+            category_parent_id: categoryParentId
+        }
+
+        mutate(category_data)
+    }
+
     return (
         <>
             <div className={styles.admin_category_block}>
@@ -49,7 +65,7 @@ const AdminChangeCategory = () => {
                 </div>
                 <div className={styles.edit_category_block}>
                     <label>Описание категории:</label>
-                    <textarea defaultValue={categoryDescription} onChange={e => setCategoryDescription(e.target.value)}></textarea>
+                    <textarea rows={20} cols={100} defaultValue={categoryDescription} onChange={e => setCategoryDescription(e.target.value)}></textarea>
                 </div>
                 <div className={styles.edit_category_block}>
                     <label>Ссылка на категорию:</label>
@@ -60,7 +76,7 @@ const AdminChangeCategory = () => {
                     <ChangeParentCategory category_id={category_id} setCategoryParentId={setCategoryParentId} />
                 </div>
 
-                <button className={styles.save_category}>Сохранить</button>
+                <button className={styles.save_category} onClick={handleUpdate}>Сохранить</button>
             </div>
         </>
     )
