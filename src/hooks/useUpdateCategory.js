@@ -4,7 +4,7 @@ const updateCategory = async (category) => {
     const res = await fetch("https://hanyo-writes.omyraucy.workers.dev/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(category)
+        body: JSON.stringify({action:"edit_category", ...category})
     });
 
     if (!res.ok) {
