@@ -8,19 +8,23 @@ import Post from "./pages/Post"
 
 import Admin from "./pages/Admin"
 import Dashboard from "./pages/Dashboard"
+import DashboardHome from "./pages/DashboardHome"
 import AdminPosts from "./pages/AdminPosts"
 import AdminCategories from "./pages/AdminCategories"
 import AdminChangeCategory from "./pages/AdminChangeCategory"
+
 
 const Router = () => {
     return (
         <Routes>
             {/* Админ часть */}
             <Route path="/admin" element={<Admin />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/dashboard/posts" element={<AdminPosts />} />
-            <Route path="/dashboard/categories" element={<AdminCategories />} />
-            <Route path="/dashboard/change_category/:category_id" element={<AdminChangeCategory />} />
+            <Route path="/dashboard" element={<Dashboard />}>
+                <Route index element={<DashboardHome />} />
+                <Route path="posts" element={<AdminPosts />} />
+                <Route path="categories" element={<AdminCategories />} />
+                <Route path="change_category/:category_id" element={<AdminChangeCategory />} />
+            </Route>
 
             {/* Клиентская часть */}
             <Route path="/" element={<Home />} />

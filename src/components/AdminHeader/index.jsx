@@ -4,9 +4,10 @@ import { Link } from "react-router"
 const AdminHeader = memo(() => (
     <header>
         <nav>
-            <Link to="/dashboard/posts">Посты</Link>
-            <Link to="/dashboard/categories">Категории</Link>
-            <Link to="/dashboard/users">Пользователи</Link>
+            <Link to="/dashboard">Dashboard</Link>
+            <Link to="posts">Посты</Link>
+            <Link to="categories">Категории</Link>
+            <Link to="users">Пользователи</Link>
         </nav>
     </header>
 ))

@@ -10,9 +10,7 @@ const AdminCategories = () => {
     if (isLoading) {
         return (
             <>
-                <AdminHeader />
                 <p>Загрузка данных...</p>
-                <Footer />
             </>
         )
     }
@@ -20,9 +18,7 @@ const AdminCategories = () => {
     if (isError) {
         return (
             <>
-                <AdminHeader />
                 <p>{error.message}</p>
-                <Footer />
             </>
         )
     }
@@ -31,7 +27,6 @@ const AdminCategories = () => {
 
     return (
         <>
-            <AdminHeader />
             <div className={styles.admin_categories}>
             <h2>Категории</h2>
             {categories.map(cat => (
@@ -43,7 +38,6 @@ const AdminCategories = () => {
                 </div>
             ))}
             </div>
-            <Footer />
         </>
     )
 }

@@ -1,14 +1,13 @@
 import styles from "./Dashboard.module.css"
 import AdminHeader from "../../components/AdminHeader"
+import { Outlet } from "react-router-dom"
 import Footer from "../../components/Footer"
 
 const Dashboard = () => {
     return (
         <>
             <AdminHeader />
-            <div className={styles.container}>
-                Здесь пока что пусто
-            </div>
+            <Outlet />
             <Footer />
         </>
     )

@@ -1,5 +1,3 @@
-import AdminHeader from "../../components/AdminHeader"
-import Footer from "../../components/Footer"
 import PostsContainer from "../../components/PostsContainer"
 import { Link } from "react-router"
 import { useAllPostsForAdmin } from "../../hooks/useAllPostsForAdmin"
@@ -10,9 +8,7 @@ const AdminPosts = () => {
 
     if (isLoading) return (
         <>
-            <AdminHeader />
             <h2>Загрузка постов</h2>
-            <Footer />
         </>
     )
 
@@ -20,13 +16,11 @@ const AdminPosts = () => {
 
     return (
         <>
-            <AdminHeader />
             <nav>
                 <Link to="create-post">Создать пост</Link>
                 <Link to="drafts">Черновики</Link>
             </nav>
             <PostsContainer posts={data.posts} />
-            <Footer />
         </>
     )
 }

@@ -2,10 +2,36 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    align-items: flex-start;
 }
 
-.admin_category_block > input,
-.admin_category_block > textarea {
-    color: #000;
-    
+.admin_category_block > div.edit_category_block > input {
+    background: transparent;
+    color: #fff;
+    border: none;
+    border-bottom: 2px solid #fff;
+    outline: none;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.admin_category_block > div.edit_category_block > textarea {
+    background: transparent;
+    padding: 5px;
+    border: 2px solid #fff;
+    font-size: 16px;
+}
+
+.edit_category_block {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: fit-content;
+}
+
+button.save_category {
+    background: transparent;
+    border: 2px solid #fff;
+    padding: 5px;
+    cursor: pointer;
 }
