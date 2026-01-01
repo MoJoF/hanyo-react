@@ -1,5 +1,6 @@
 import styles from "./CategoryPosts.module.css"
 import { useGetPostsByCategoryLink } from "../../hooks/useGetPostsByCategoryLink"
+import { Link } from "react-router"
 
 const CategoryPosts = ({ link }) => {
     const { data, isLoading, isError, error } = useGetPostsByCategoryLink(link)
@@ -10,11 +11,15 @@ const CategoryPosts = ({ link }) => {
 
     const posts = data.posts
 
-    console.log(posts)
-
     return (
         <div className={styles.category_posts}>
-            
+            <hr />
+            {posts.map(post => (
+                <div key={post.post_id} className={styles.category_post}>
+                    <h2>{post.post_title}</h2>
+                    <Link to={"/post/" + post.post_id}>Читать</Link>
+                </div>
+            ))}
         </div>
     )
 }
