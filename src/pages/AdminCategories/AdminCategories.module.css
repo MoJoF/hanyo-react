@@ -9,3 +9,16 @@ small.delete_category {
     font-size: 16px;
     cursor: pointer;
 }
+
+.admin_categories {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.admin_category {
+    padding: 10px;
+    border: 2px solid #fff;
+    width: fit-content;
+    border-radius: 0 0 10px 0;
+}

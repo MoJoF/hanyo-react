@@ -26,6 +26,9 @@ const AdminCategories = () => {
 
     return (
         <>
+            <nav>
+                <Link to="create_category">Создать категорию</Link>
+            </nav>
             <div className={styles.admin_categories}>
                 <h2>Категории</h2>
                 {categories.map(cat => (

@@ -38,8 +38,6 @@ const Admin = () => {
                 if (data.status === "OK") {
                     localStorage.setItem("auth", data.auth)
                     nav('/dashboard')
-                } else if (data.error) {
-                    alert(data.error)
                 }
             })
     }
