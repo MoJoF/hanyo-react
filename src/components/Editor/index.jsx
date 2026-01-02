@@ -47,7 +47,7 @@ const Editor = ({ html }) => {
             <div className={styles.post_editor}
                 ref={editorRef}
                 contentEditable
-                onPaste={handlePaste}>
+                onPaste={handlePaste}>{html}
             </div>
         </>
     )
