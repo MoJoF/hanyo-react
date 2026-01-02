@@ -7,10 +7,10 @@ const PostsContainer = ({ posts }) => {
         <div className={styles.admin_posts}>
             {posts.map(post => (
                 <div className={styles.admin_post} key={post.post_id}>
-                    <Link to={"/dashboard/posts/edit_post?id=" + post.post_id}>{post.post_title}</Link>
+                    <Link to={"/dashboard/posts/edit_post/" + post.post_id}>{post.post_title}</Link>
                     <div className={styles.admin_bottom_post}>
-                        <Link to="/dashboard/categories/translates" className={styles.admin_category_post}>
-                            Переводы
+                        <Link to={"/dashboard/categories/chage_category/" + post.category_id} className={styles.admin_category_post}>
+                            {post.category_title}
                         </Link>
                         {post.post_draft ? <small>Черновик</small> : ""}
                     </div>

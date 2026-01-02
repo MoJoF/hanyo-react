@@ -1,0 +1,19 @@
+.post_editor {
+  width: 500px;
+  min-height: 200px;
+  max-height: 1000px;
+  padding: 10px;
+  border: 1px solid white;
+  overflow-y: scroll;
+  line-height: 150%;
+  outline: none;
+}
+
+.post_editor::-webkit-scrollbar {
+  display: none;
+}
+
+.post_editor img {
+  width: 100%;
+  border-radius: 10px;
+}
