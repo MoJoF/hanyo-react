@@ -7,6 +7,7 @@ import Category from "./pages/Category"
 import Post from "./pages/Post"
 import About from "./pages/About"
 import Contacts from "./pages/Contacts"
+import Blog from "./pages/Blog"
 
 import Admin from "./pages/Admin"
 import Dashboard from "./pages/Dashboard"
@@ -42,6 +43,7 @@ const Router = () => {
             <Route path="/post/:post_id" element={<Post />} />
             <Route path="/about" element={<About />} />
             <Route path="/contacts" element={<Contacts />} />
+            <Route path="/blog" element={<Blog />} />
 
             {/* 404 */}
             <Route path="*" element={<NotFound />} />
