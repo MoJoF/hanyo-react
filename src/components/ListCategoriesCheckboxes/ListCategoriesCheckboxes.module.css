@@ -1,0 +1,9 @@
+.category_input {
+    padding: 5px;
+    border: 1px solid #fff;
+}
+
+.category_selected_input {
+    padding: 5px;
+    border: 2px solid yellow;
+}

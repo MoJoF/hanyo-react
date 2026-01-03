@@ -14,6 +14,7 @@ import AdminCategories from "./pages/AdminCategories"
 import AdminChangeCategory from "./pages/AdminChangeCategory"
 import AdminCreateCategory from "./pages/AdminCreateCategory"
 import AdminEditPost from "./pages/AdminEditPost"
+import AdminCreatePost from "./pages/AdminCreatePost"
 
 
 const Router = () => {
@@ -25,9 +26,10 @@ const Router = () => {
                 <Route index element={<DashboardHome />} />
                 <Route path="posts" element={<AdminPosts />} />
                 <Route path="categories" element={<AdminCategories />} />
-                <Route path="change_category/:category_id" element={<AdminChangeCategory />} />
+                <Route path="categories/change_category/:category_id" element={<AdminChangeCategory />} />
                 <Route path="categories/create_category/" element={<AdminCreateCategory />} />
                 <Route path="posts/edit_post/:post_id" element={<AdminEditPost />} />
+                <Route path="posts/create_post" element={<AdminCreatePost />} />
             </Route>
 
             {/* Клиентская часть */}

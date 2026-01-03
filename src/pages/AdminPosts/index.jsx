@@ -17,7 +17,7 @@ const AdminPosts = () => {
     return (
         <>
             <nav>
-                <Link to="create-post">Создать пост</Link>
+                <Link to="create_post">Создать пост</Link>
                 <Link to="drafts">Черновики</Link>
             </nav>
             <PostsContainer posts={data.posts} />

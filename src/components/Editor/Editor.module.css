@@ -1,3 +1,18 @@
+.editor_container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.editor_container > button {
+  color: #fff;
+  width: fit-content;
+  padding: 5px;
+  background: transparent;
+  border: 1px solid white;
+}
+
 .post_editor {
   width: 100%;
   min-height: 200px;

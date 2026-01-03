@@ -1,6 +1,5 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { RecoilRoot } from "recoil"
-import { useAllCategories } from "./hooks/useAllCategories"
 import Router from "./Router"
 
 
