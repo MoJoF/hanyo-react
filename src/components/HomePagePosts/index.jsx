@@ -4,7 +4,7 @@ import { Link } from "react-router"
 
 
 const HomePagePosts = () => {
-    const { data, isLoading, isError, error } = useGetLimitedPosts(10)
+    const { data, isLoading, isError, error } = useGetLimitedPosts(30)
     if (isLoading) return (<p>Загрузка постов</p>)
     if (isError) return (<p>{error.message}</p>)
 

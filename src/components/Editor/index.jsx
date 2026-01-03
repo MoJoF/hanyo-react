@@ -1,8 +1,9 @@
 import styles from "./Editor.module.css"
-import { useRef } from "react"
+import { useRef, useEffect } from "react"
 
 const Editor = ({ html, setHtml }) => {
     const editorRef = useRef(null)
+    const initialRender = useRef(true)
 
     const handlePaste = async (e) => {
         const items = e.clipbloadData?.items
@@ -46,6 +47,13 @@ const Editor = ({ html, setHtml }) => {
         setHtml(h)
     }
 
+    useEffect(() => {
+        if (editorRef.current && initialRender.current && html) {
+            editorRef.current.innerHTML = html
+            initialRender.current = false
+        }
+    }, [html])
+
     return (
         <div className={styles.editor_container}>
             {/* <button>Загрузить файлы</button> */}
@@ -53,8 +61,7 @@ const Editor = ({ html, setHtml }) => {
                 ref={editorRef}
                 contentEditable
                 onPaste={handlePaste}
-                onInput={() => changeContent()}
-                dangerouslySetInnerHTML={{ __html: html }}>
+                onInput={() => changeContent()}>
             </div>
         </div>
     )

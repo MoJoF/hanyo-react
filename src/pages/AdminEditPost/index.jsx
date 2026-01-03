@@ -46,7 +46,7 @@ const AdminEditPost = () => {
         <div className={styles.admin_create_post}>
             <nav>
                 <button onClick={() => savePost()}>Сохранить</button>
-                {isDraft && <PublishPostButton post_id={post_id} category_id={categoryId} post_title={header} post_html={html} post_draft={0} />}
+                {isDraft ? <PublishPostButton post_id={post_id} category_id={categoryId} post_title={header} post_html={html} post_draft={0} /> : ""}
             </nav>
             <input className={styles.write_header}
                 type="text"
