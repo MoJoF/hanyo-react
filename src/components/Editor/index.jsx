@@ -53,7 +53,7 @@ const Editor = ({ html, setHtml }) => {
                 ref={editorRef}
                 contentEditable
                 onPaste={handlePaste}
-                onChange={() => changeContent()}
+                onInput={() => changeContent()}
                 dangerouslySetInnerHTML={{ __html: html }}>
             </div>
         </div>

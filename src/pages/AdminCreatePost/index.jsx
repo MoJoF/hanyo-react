@@ -10,15 +10,10 @@ const AdminCreatePost = () => {
     const [html, setHtml] = useState("")
     const [header, setHeader] = useState("")
 
-    const publish = () => {
-        
-    }
-
     return (
         <div className={styles.admin_create_post}>
             <nav>
                 <SaveDraftForNewPost post_title={header} post_html={html} category_id={categoryId} />
-                <button>Опубликовать</button>
             </nav>
             <input className={styles.write_header}
                 type="text"

@@ -1,8 +1,15 @@
 import styles from "./PostsContainer.module.css"
 import { Link } from "react-router"
+import { useDeletePost } from "../../hooks/useDeletePost"
 
 
 const PostsContainer = ({ posts }) => {
+    const { mutate, isPending } = useDeletePost()
+
+    const deletePost = (post_id) => {
+        mutate(post_id)
+    }
+
     return (
         <div className={styles.admin_posts}>
             {posts.map(post => (
@@ -13,6 +20,7 @@ const PostsContainer = ({ posts }) => {
                             {post.category_title}
                         </Link>
                         {post.post_draft ? <small>Черновик</small> : ""}
+                        <button className={styles.post_remove_button} onClick={() => deletePost(post.post_id)}>Удалить</button>
                     </div>
                 </div>
             ))}

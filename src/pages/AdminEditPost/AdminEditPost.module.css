@@ -1,0 +1,40 @@
+.admin_create_post {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.admin_create_post > nav {
+    display: flex;
+    gap: 20px;
+}
+
+.admin_create_post > nav > button {
+    background: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 5px;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.admin_create_post > nav > button:hover {
+    background: #fff;
+    color: #000;
+}
+
+.write_new_post {
+    display: flex;
+    gap: 40px;
+}
+
+input.write_header {
+    outline: none;
+    padding: 10px;
+    font-size: 20px;
+    color: #fff;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #fff;
+    width: 50%;
+}
