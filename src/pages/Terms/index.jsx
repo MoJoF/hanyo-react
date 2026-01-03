@@ -57,7 +57,7 @@ const Terms = () => {
             <p>9.2. Все споры решаются в соответствии с действующим законодательством.</p>
 
             <h2>10. Контакты</h2>
-            <p>Если у вас есть вопросы по Условиям использования, свяжитесь с нами: Email: <a href="mailto:flybuk@icloud.com"><i>flybuk@icloud.com</i></a></p>
+            <p>Если у вас есть вопросы по Условиям использования, свяжитесь с нами. Email: <a href="mailto:flybuk@icloud.com"><i>flybuk@icloud.com</i></a></p>
 
             <Footer />
         </>
