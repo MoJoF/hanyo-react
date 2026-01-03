@@ -5,6 +5,7 @@ import Policy from "./pages/Policy"
 import Terms from "./pages/Terms"
 import Category from "./pages/Category"
 import Post from "./pages/Post"
+import About from "./pages/About"
 
 import Admin from "./pages/Admin"
 import Dashboard from "./pages/Dashboard"
@@ -38,6 +39,7 @@ const Router = () => {
             <Route path="/terms" element={<Terms />} />
             <Route path="/category/:link" element={<Category />} />
             <Route path="/post/:post_id" element={<Post />} />
+            <Route path="/about" element={<About />} />
 
             {/* 404 */}
             <Route path="*" element={<NotFound />} />
